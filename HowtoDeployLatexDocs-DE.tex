@@ -166,19 +166,19 @@ keine Kosten durch die Nutzung.
   in Zeile 16 ist Beispielcode zu sehen um Markdown als Ausgangsformat
   zu verwenden
 \item
-  in Zeile 20 und 21 ist der Aufruf des \texttt{pdflatex} Programms zur
+  in Zeile 20 bis 22 ist der Aufruf des \texttt{pdflatex} Programms zur
   Umwandlung von .tex zu .pdf
 \item
-  in Zeile 24 und 25 wird das PDF in ein
+  in Zeile 25 und 26 wird das PDF in ein
   \href{https://de.wikipedia.org/wiki/DjVu}{DjVu-Dokument} umgewandelt
 \item
-  in Zeile 28 ist zu sehen, wie man mittels wget die generierten Daten
+  in Zeile 29 ist zu sehen, wie man mittels wget die generierten Daten
   überträgt
 \item
-  der in Zeile 33 definierte provider \textbf{releases} steht für
+  der in Zeile 34 definierte provider \textbf{releases} steht für
   \textbf{GitHub Releases}
 \item
-  in Zeile 37 ist der \textbf{oauth} String der zur
+  in Zeile 38 ist der \textbf{oauth} String der zur
   \href{http://docs.travis-ci.com/user/deployment/releases/}{Speicherung
   der Releases} benötigt wird gespeichert, dies kann über verschiedene
   Befehle erzeugt werden
@@ -187,13 +187,13 @@ keine Kosten durch die Nutzung.
   \tightlist
   \item
     \texttt{travis\ setup\ releases} generiert den ganzen
-    \emph{deploy}-Block (30-47)
+    \emph{deploy}-Block (31-49)
   \item
     \texttt{travis\ encrypt\ ***\$OAUTH\_STRING***} erzeugt nur den
-    verschlüsselten Teil in Zeile 37
+    verschlüsselten Teil in Zeile 38
   \end{itemize}
 \item
-  in den Zeilen 41 bis 44 werden die hochzuladenden Dateien definiert
+  in den Zeilen 42 bis 46 werden die hochzuladenden Dateien definiert
 \end{itemize}
 
 \item

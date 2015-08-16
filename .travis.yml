@@ -12,13 +12,14 @@ apt_packages:
   - pdf2djvu
 
 script:
-# if you have a markdown source, you have to uncomment the next line
-#  - pandoc -s -o HowtoDeployLatexDocs-DE.tex HowtoDeployLatexDocs-DE.md
+# if you have a markdown source, you can use pandoc to convert it to a LaTeX document
+  - pandoc -s -o README.tex README.md
 
 # in the next step we use pdflatex to convert .tex to .pdf
 # of course we could use pandoc for this also, but pdflatex generates nicer PDFs
   - pdflatex -interaction=nonstopmode HowtoDeployLatexDocs-DE.tex
   - pdflatex -interaction=nonstopmode HowtoDeployLatexDocs-EN.tex
+  - pdflatex -interaction=nonstopmode README.tex
 
 # now we convert the pdf file to a much smaller djvu document  
   - pdf2djvu -d 1200 -o HowtoDeployLatexDocs-DE.djvu HowtoDeployLatexDocs-DE.pdf
@@ -40,6 +41,7 @@ deploy:
   file: 
     - "HowtoDeployLatexDocs-DE.pdf"
     - "HowtoDeployLatexDocs-EN.pdf"
+    - "README.pdf"
     - "HowtoDeployLatexDocs-DE.djvu"
     - "HowtoDeployLatexDocs-EN.djvu"
   skip_cleanup: true

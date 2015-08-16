@@ -163,18 +163,18 @@ use.
 \item
   in line 16 is sample code to see howto use Markdown as input format
 \item
-  in line 20 and 21 is the call of the \texttt{pdflatex} program for converting
+  in line 20 and 22 is the call of the \texttt{pdflatex} program for converting
   .tex to .pdf
 \item
-  in line 24 and 25, the PDF gets converted to a
+  in line 25 and 26, the PDF gets converted to a
   \href{https://en.wikipedia.org/wiki/DjVu}{DjVu document}
 \item
-  in line 28 you can see how to transfer the generated data via wget
+  in line 29 you can see how to transfer the generated data via wget
 \item
-  the at line 33 defined provider \textbf{releases} stands for
+  the at line 34 defined provider \textbf{releases} stands for
   \textbf{GitHub releases}
 \item
-  in line 37 the required \textbf{oauth} string for
+  in line 38 the required \textbf{oauth} string for
   \href{http://docs.travis-ci.com/user/deployment/releases/}{storing
   releases} is saved, it can be generated with different commands
 
@@ -182,13 +182,13 @@ use.
   \tightlist
   \item
     \texttt{travis\ setup\ releases} generates the full
-    \emph{deploy}-block (30-47)
+    \emph{deploy}-block (31-49)
   \item
     \texttt{travis\ encrypt\ ***\$OAUTH\_STRING***} generates only the
-    encrypted part in row 37
+    encrypted part in row 38
   \end{itemize}
 \item
-  in lines 41 to 44 the files to upload are defined
+  in lines 42 to 46 the files to upload are defined
 \end{itemize}
 
 \item
