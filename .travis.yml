@@ -1,0 +1,47 @@
+os: linux
+
+# we use the R VM because it contains LaTeX and pandoc
+language: r
+
+# we need super user privileges, so we depend on the old travis-ci infrastructure
+sudo: required
+
+# we can install additional software
+apt_packages:
+# we download pdf2djvu to also generate a djvu file of our LaTeX source
+  - pdf2djvu
+
+script:
+# if you have a markdown source, you have to uncomment the next line
+#  - pandoc -s -o HowtoDeployLatexDocs-DE.tex HowtoDeployLatexDocs-DE.md
+
+# in the next step we use pdflatex to convert .tex to .pdf
+# of course we could use pandoc for this also, but pdflatex generates nicer PDFs
+  - pdflatex -interaction=nonstopmode HowtoDeployLatexDocs-DE.tex
+  - pdflatex -interaction=nonstopmode HowtoDeployLatexDocs-EN.tex
+
+# now we convert the pdf file to a much smaller djvu document  
+  - pdf2djvu -d 1200 -o HowtoDeployLatexDocs-DE.djvu HowtoDeployLatexDocs-DE.pdf
+  - pdf2djvu -d 1200 -o HowtoDeployLatexDocs-EN.djvu HowtoDeployLatexDocs-EN.pdf
+after_success:
+# upload the previously generated pdf file to simonwaldherr.de (use $UPLOADSECRET as password)
+#  - wget --post-file=HowtoDeployLatexDocs-DE.pdf -q -O- "https://simonwaldherr.de/pdf/?repo=HowtoDeployLatexDocs&mode=save&key=$UPLOADSECRET&pull=$TRAVIS_PULL_REQUEST"
+
+deploy:
+
+# provider releases means GitHub Releases
+  provider: releases
+  api_key:
+
+# Travis CI public key encrypted GitHub oauth key for pushing to GitHub Releases
+    secure: ...
+
+# the list of files to upload
+  file: 
+    - "HowtoDeployLatexDocs-DE.pdf"
+    - "HowtoDeployLatexDocs-EN.pdf"
+    - "HowtoDeployLatexDocs-DE.djvu"
+    - "HowtoDeployLatexDocs-EN.djvu"
+  skip_cleanup: true
+  on:
+    repo: SimonWaldherr/HowTo-Deploy-LaTeX-Documents

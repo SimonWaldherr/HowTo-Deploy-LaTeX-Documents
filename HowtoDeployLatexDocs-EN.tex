@@ -1,0 +1,225 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{ifxetex,ifluatex}
+
+\definecolor{mygray}{rgb}{0.4,0.4,0.4}
+\definecolor{mygreen}{rgb}{0,0.8,0.6}
+\definecolor{myorange}{rgb}{1.0,0.4,0}
+\definecolor{myblue}{rgb}{0.2,0.4,1}
+\definecolor{mylightgray}{rgb}{0.98,0.98,0.98}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstset{
+  literate={P1+zIRw4qIH6BDHqRhZO80fAiXfpHaH58IW61fEZdR1i2cyHdq8tik5X2TZtfSNL0rDtNl8n2fV0Smy+MpJ4xYrWVi0ZYJ0xVLYJXz2HJPic6OBl7hgzm4fj28FqJ6j+glGwDIAH1LS1Rs2Jh3Kp18cuF8nklvoMbTfz1OY7JM1QkarwnnR0q2xw38ha1JRAAHB0OGzsqkIoNPdklhXd7toEuoap+9lhh8t2vFtr7rI/Eyup6NyWvHA4zEQShnrdQ92gobnqEDFEYx2hQTmLNlg1IMYioJqHysG8DfC4MT6AHMZwlB6o2eDRxA7BWd/WV7p8al7FaTbbnlo6PBRc/R8N8pKOVDlN9Jh+Rdrx0dLDpwjYKM6+Uu0wA0/to4A0qyp8gvekZYg63xbDUIcQ6sRc4SnA/8+/QogUu7HaEc9bdAEDYUNzxz6RGC05dkG9eXvlFznfLsOdCk3Zsde8OKGivY/oQEKcvdV5vNo5OPTrqHhORKzP2xGTptkiPbIzOHzCx0/V85mydBFVXBvARKJkGFDrVgX+BoFJGfXeGGrSlxgYhs5CQD852mJAdJR/2b8xpgSXCQj9HwnUjhjsQxvIMlU7pKM/iL1+UdQpEV2uLI0z9zeQUrOfQlmnHZzBn14TOjRv0uIJLpudGWzpJXje0l1zwP5OwwLckSXxpRU=}{{$...$}}1 {<}{$\langle$}{1} {>}{$\rangle$}{1},
+  backgroundcolor=\color{mylightgray},
+  basicstyle=\footnotesize,
+  breaklines=true,
+  captionpos=b,
+  commentstyle=\small\color{mygreen},
+  deletekeywords={...},
+  escapeinside={\%*}{*)},
+  extendedchars=true,
+  keepspaces=true,
+  keywordstyle=\color{myblue},
+  otherkeywords={*,os:,language:,sudo:,apt_packages:,script:,after_success:,deploy:,provider:,api_key:,secure:,file:,skip_cleanup:,on:,repo:,...},
+  numbers=left,
+  numbersep=5pt,
+  numberstyle=\tiny\color{mygray},
+  showspaces=false,
+  showstringspaces=false,
+  showtabs=false,
+  stepnumber=1,
+  stringstyle=\color{myorange},
+  tabsize=2,
+  title=\lstname
+}
+
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else
+  \ifxetex
+    \usepackage{mathspec}
+    \usepackage{xltxtra,xunicode}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+  \newcommand{\euro}{€}
+\fi
+
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+
+\IfFileExists{microtype.sty}{
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath}
+}{}
+\ifxetex
+  \usepackage[setpagesize=false,
+              unicode=false,
+              xetex]{hyperref}
+\else
+  \usepackage[unicode=true]{hyperref}
+\fi
+
+\hypersetup{breaklinks=true,
+            bookmarks=true,
+            pdfauthor={},
+            pdftitle={},
+            colorlinks=true,
+            citecolor=blue,
+            urlcolor=blue,
+            linkcolor=magenta,
+            pdfborder={0 0 0}}
+\urlstyle{same}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+\setlength{\emergencystretch}{3em}
+\providecommand{\tightlist}{
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+
+\date{}
+
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+\title{HowTo Deploy LaTeX Documents}
+\author{Simon Waldherr}
+
+\begin{document}
+
+\section{Deploy \LaTeX \ as PDF via GitHub and TravisCI}\label{deploy-latex-as-pdf-via-github-and-travisci}
+
+\parskip 42pt
+
+This document will explain how to automatically convert \LaTeX -documents
+into PDFs and can publish them via the services
+\href{https://github.com/}{GitHub} and
+\href{https://travis-ci.org/}{TravisCI}. The advantage of this method
+over the local transformation (Eg via git hooks) and insertion into the
+repository, among other things are:
+
+\begin{itemize}
+\tightlist
+\item
+  No binary data in the repo
+\item
+  Check the code at each commit
+\item
+  Testing of pull requests
+\item
+  Independence from the local system
+\end{itemize}
+
+Of course, this can be extended to cover the conversion of Markdown by
+using \textbf{pandoc}.
+
+In the instructions, I assume that it is a public document. Therefore
+free accounts can be used at \href{https://github.com/}{GitHub} and
+\href{https://travis-ci.org/}{TravisCI}. There are no costs through the
+use.
+
+\parskip 12pt
+\parindent 0pt
+
+\newpage
+
+\subsection{Step by step}\label{step-by-step}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Creation of a \textbf{git}-Repository
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://github.com/SimonWaldherr/golang-examples\#fork-destination-box}{fork
+  this repo} \emph{or}
+\item
+  \href{https://github.com/new}{create a new repo on GitHub}
+\end{itemize}
+
+\item
+  \texttt{git\ clone} the repo (\emph{yes, you could also edit online,
+  but we ignore it this time})
+\item
+  for configuration, we use \textbf{Travis.yml-YAML file} (more details
+  below)
+
+\begin{itemize}
+\tightlist
+\item
+  in line 16 is sample code to see howto use Markdown as input format
+\item
+  in line 20 and 21 is the call of the \texttt{pdflatex} program for converting
+  .tex to .pdf
+\item
+  in line 24 and 25, the PDF gets converted to a
+  \href{https://en.wikipedia.org/wiki/DjVu}{DjVu document}
+\item
+  in line 28 you can see how to transfer the generated data via wget
+\item
+  the at line 33 defined provider \textbf{releases} stands for
+  \textbf{GitHub releases}
+\item
+  in line 37 the required \textbf{oauth} string for
+  \href{http://docs.travis-ci.com/user/deployment/releases/}{storing
+  releases} is saved, it can be generated with different commands
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \texttt{travis\ setup\ releases} generates the full
+    \emph{deploy}-block (30-47)
+  \item
+    \texttt{travis\ encrypt\ ***\$OAUTH\_STRING***} generates only the
+    encrypted part in row 37
+  \end{itemize}
+\item
+  in lines 41 to 44 the files to upload are defined
+\end{itemize}
+
+\item
+  to activate the repo for Travis builds it may be necessary to refresh
+  the list of repos in your
+  \href{https://travis-ci.org/profile}{TravisCI profile}.
+\item
+  now the \LaTeX \ or Markdown-files are to be created (remember to update
+  the filenames in \textbf{.travis.yml})
+\item
+  at every \texttt{git\ push} a GNU/Linux VM will be started
+  automatically at TravisCI which generates the PDF and DjVu files and
+  publishes them as GitHub release. \emph{This file was created exactly
+  this way, each step can be viewed in the
+  \href{https://travis-ci.org/SimonWaldherr/HowTo-Deploy-LaTeX-Documents}{TravisCI
+  logfile}.}
+\end{enumerate}
+
+\newpage
+
+\subsection{Travis Config (YAML)}\label{travis-config-yaml}
+
+\lstinputlisting[language=PHP]{.travis.yml}
+
+\newpage
+
+\subsection{Terms of Use}\label{terms-of-use}
+
+All Rights Reserved. No guarantee for completeness or actuality. All
+content of this Repository is licensed under a
+\href{http://creativecommons.org/licenses/by-sa/4.0/}{Creative Commons
+Attribution - Share Alike 4.0 License International}.
+
+\end{document}
