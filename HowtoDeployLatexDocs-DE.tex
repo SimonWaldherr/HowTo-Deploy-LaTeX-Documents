@@ -2,8 +2,14 @@
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
 \usepackage{listings}
-\usepackage{color}
 \usepackage{ifxetex,ifluatex}
+
+\addtolength{\voffset}{-35pt}
+\addtolength{\hoffset}{-35pt}
+\addtolength{\textheight}{+70pt}
+\addtolength{\textwidth}{+70pt}
+
+\usepackage{color}
 
 \definecolor{mygray}{rgb}{0.4,0.4,0.4}
 \definecolor{mygreen}{rgb}{0,0.8,0.6}
@@ -163,22 +169,22 @@ keine Kosten durch die Nutzung.
 \begin{itemize}
 \tightlist
 \item
-  in Zeile 16 ist Beispielcode zu sehen um Markdown als Ausgangsformat
+  in Zeile 18 ist Beispielcode zu sehen um Markdown als Ausgangsformat
   zu verwenden
 \item
-  in Zeile 20 bis 22 ist der Aufruf des \texttt{pdflatex} Programms zur
+  in Zeile 22 bis 24 ist der Aufruf des \texttt{pdflatex} Programms zur
   Umwandlung von .tex zu .pdf
 \item
-  in Zeile 25 und 26 wird das PDF in ein
+  in Zeile 27 und 28 wird das PDF in ein
   \href{https://de.wikipedia.org/wiki/DjVu}{DjVu-Dokument} umgewandelt
 \item
-  in Zeile 29 ist zu sehen, wie man mittels wget die generierten Daten
+  in Zeile 31 ist zu sehen, wie man mittels wget die generierten Daten
   überträgt
 \item
-  der in Zeile 34 definierte provider \textbf{releases} steht für
+  der in Zeile 36 definierte provider \textbf{releases} steht für
   \textbf{GitHub Releases}
 \item
-  in Zeile 38 ist der \textbf{oauth} String der zur
+  in Zeile 40 ist der \textbf{oauth} String der zur
   \href{http://docs.travis-ci.com/user/deployment/releases/}{Speicherung
   der Releases} benötigt wird gespeichert, dies kann über verschiedene
   Befehle erzeugt werden
@@ -187,13 +193,13 @@ keine Kosten durch die Nutzung.
   \tightlist
   \item
     \texttt{travis\ setup\ releases} generiert den ganzen
-    \emph{deploy}-Block (31-49)
+    \emph{deploy}-Block (33-51)
   \item
     \texttt{travis\ encrypt\ ***\$OAUTH\_STRING***} erzeugt nur den
-    verschlüsselten Teil in Zeile 38
+    verschlüsselten Teil in Zeile 40
   \end{itemize}
 \item
-  in den Zeilen 42 bis 46 werden die hochzuladenden Dateien definiert
+  in den Zeilen 44 bis 48 werden die hochzuladenden Dateien definiert
 \end{itemize}
 
 \item

@@ -13,7 +13,9 @@ apt_packages:
 
 script:
 # if you have a markdown source, you can use pandoc to convert it to a LaTeX document
-  - cat README.md | grep --invert-match "\[\!\[" > README2.md; pandoc -s -o README.tex README2.md
+  - cat README.md | grep --invert-match "\[\!\[" > README2.md
+  - cat README2.md | grep --invert-match "Howto Deploy LaTeX Documents" > README.md
+  - pandoc -s --from=markdown_github --to=latex -M title="Howto Deploy LaTeX Documents" -M author="Simon Waldherr" -V geometry:a4paper,margin=2cm -o README.tex README.md
 
 # in the next step we use pdflatex to convert .tex to .pdf
 # of course we could use pandoc for this also, but pdflatex generates nicer PDFs

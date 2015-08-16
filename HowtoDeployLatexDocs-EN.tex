@@ -2,8 +2,14 @@
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
 \usepackage{listings}
-\usepackage{color}
 \usepackage{ifxetex,ifluatex}
+
+\addtolength{\voffset}{-35pt}
+\addtolength{\hoffset}{-35pt}
+\addtolength{\textheight}{+70pt}
+\addtolength{\textwidth}{+70pt}
+
+\usepackage{color}
 
 \definecolor{mygray}{rgb}{0.4,0.4,0.4}
 \definecolor{mygreen}{rgb}{0,0.8,0.6}
@@ -161,20 +167,20 @@ use.
 \begin{itemize}
 \tightlist
 \item
-  in line 16 is sample code to see howto use Markdown as input format
+  in line 18 is sample code to see howto use Markdown as input format
 \item
-  in line 20 and 22 is the call of the \texttt{pdflatex} program for converting
+  in line 22 and 24 is the call of the \texttt{pdflatex} program for converting
   .tex to .pdf
 \item
-  in line 25 and 26, the PDF gets converted to a
+  in line 27 and 28, the PDF gets converted to a
   \href{https://en.wikipedia.org/wiki/DjVu}{DjVu document}
 \item
-  in line 29 you can see how to transfer the generated data via wget
+  in line 31 you can see how to transfer the generated data via wget
 \item
-  the at line 34 defined provider \textbf{releases} stands for
+  the at line 36 defined provider \textbf{releases} stands for
   \textbf{GitHub releases}
 \item
-  in line 38 the required \textbf{oauth} string for
+  in line 40 the required \textbf{oauth} string for
   \href{http://docs.travis-ci.com/user/deployment/releases/}{storing
   releases} is saved, it can be generated with different commands
 
@@ -182,13 +188,13 @@ use.
   \tightlist
   \item
     \texttt{travis\ setup\ releases} generates the full
-    \emph{deploy}-block (31-49)
+    \emph{deploy}-block (33-51)
   \item
     \texttt{travis\ encrypt\ ***\$OAUTH\_STRING***} generates only the
-    encrypted part in row 38
+    encrypted part in row 40
   \end{itemize}
 \item
-  in lines 42 to 46 the files to upload are defined
+  in lines 44 to 48 the files to upload are defined
 \end{itemize}
 
 \item
