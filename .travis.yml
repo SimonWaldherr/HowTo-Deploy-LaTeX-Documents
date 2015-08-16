@@ -13,7 +13,7 @@ apt_packages:
 
 script:
 # if you have a markdown source, you can use pandoc to convert it to a LaTeX document
-  - pandoc -s -o README.tex README.md
+  - cat README.md | grep --invert-match "\[\!\[" > README2.md; pandoc -s -o README.tex README2.md
 
 # in the next step we use pdflatex to convert .tex to .pdf
 # of course we could use pandoc for this also, but pdflatex generates nicer PDFs
