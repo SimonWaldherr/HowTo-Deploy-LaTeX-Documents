@@ -34,7 +34,7 @@ deploy:
   api_key:
 
 # Travis CI public key encrypted GitHub oauth key for pushing to GitHub Releases
-    secure: ...
+    secure: UNfN17F/m8PSbbU53/xHGqySzA/pyyrWIc42o6Mnb3EzOMlAhTLsHvnOTw8L27KEeszyZJp8TcyG0PCnFfTgzV3gWMc1tweLnPBwWYj+qFWqQyqc8pkG4xfMrEAfbFk20sYGQYoRnaws85uc/nCcXNhVKvcFMCaZUYcxJKV/Kdass4rsfc205nRqvXa3unWlg51YzNtAB2glGbhe9/Rw6SeeTJiUmcjWKPDEhTfCTF8X0d4QaM6RiDly+Vfzv9POf+FRk8HWrmiImxguxepHhb5Ellz7hPZlTQ6iEb+igzde7jxxUKc4otFSrDG45TLoQ8BKsf32AMUo/JjXMT29H2alEF3P/6pSaev2M9gyVsQbzCfxUQOUn5HilY0D3khEIiT1smK0LrQPrQcarldN4BLJm/WG9pzsjKOp3PZQ6Afy1TOG2LPJv+xOIJFhYHNQSp+jjRaPLxbDwcZfxGFPPTDJ2xJvPEoNjL3vT1bdppGgopZxShqmxxzolBMoG0Y+H87DKu7Zv8u3yyjxneP1dhb+StsTLS7GzahD3J2WjHos9UYZV2BGitMyy2j7GJQ5+oPBH3HdoiLjU8BcTOOQ7ZX6xDxBaA9MyT+Q6pYFuxpZkbmB/7GZFnizP7Hpf5WExGVIqlIeYM6zZSaha49SPWxdQSHDLZTUHVGcG4tDbLY=
 
 # the list of files to upload
   file: 
