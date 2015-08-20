@@ -1,5 +1,5 @@
 # Howto Deploy LaTeX Documents
-## HowTo Deploy LaTex (or Markdown) Documents as PDF (and DjVu) via GitHub and TravisCI
+## HowTo Deploy LaTeX (or Markdown) Documents as PDF (and DjVu) via GitHub and TravisCI
 
 [![Build Status](https://travis-ci.org/SimonWaldherr/HowTo-Deploy-LaTeX-Documents.svg?branch=master)](https://travis-ci.org/SimonWaldherr/HowTo-Deploy-LaTeX-Documents) 
 [![GitHub Release](https://img.shields.io/badge/download-latest-brightgreen.svg)](https://github.com/SimonWaldherr/HowTo-Deploy-LaTeX-Documents/releases/latest) 
@@ -19,6 +19,12 @@ the alternative is to only publish the LaTeX source, which is other problems:
 * no preview on github
 * no preview after download
 * no way to see the completed document on devices without TeX (eg mobile)
+
+and what is the solution?
+
+* building the binary files ([PDF](https://en.wikipedia.org/wiki/Portable_Document_Format) + [DjVu](https://en.wikipedia.org/wiki/DjVu)) on a Server
+* save the files on publicly accessible servers (e.g. as [GitHub Release](https://help.github.com/articles/about-releases/))
+* link to the [files](https://github.com/SimonWaldherr/HowTo-Deploy-LaTeX-Documents/releases/latest) from the README
 
 [![Creative Commons Lizenzvertrag](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-sa/4.0/) 
 
