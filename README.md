@@ -2,6 +2,7 @@
 ## HowTo Deploy LaTeX (or Markdown) Documents as PDF (and DjVu) via [GitHub](https://github.com/github) and [TravisCI](https://github.com/travis-ci)
 
 [![Build Status](https://travis-ci.org/SimonWaldherr/HowTo-Deploy-LaTeX-Documents.svg?branch=master)](https://travis-ci.org/SimonWaldherr/HowTo-Deploy-LaTeX-Documents) 
+[![PDF Status](https://www.sharelatex.com/github/repos/SimonWaldherr/HowTo-Deploy-LaTeX-Documents/builds/latest/badge.svg)](https://www.sharelatex.com/github/repos/SimonWaldherr/HowTo-Deploy-LaTeX-Documents/builds/latest/output.pdf) 
 [![GitHub Release](https://img.shields.io/badge/download-latest-brightgreen.svg)](https://github.com/SimonWaldherr/HowTo-Deploy-LaTeX-Documents/releases/latest) 
 [![GitHub forks](https://img.shields.io/github/forks/SimonWaldherr/HowTo-Deploy-LaTeX-Documents.svg)](https://github.com/SimonWaldherr/HowTo-Deploy-LaTeX-Documents/network) 
 [![GitHub stars](https://img.shields.io/github/stars/SimonWaldherr/HowTo-Deploy-LaTeX-Documents.svg)](https://github.com/SimonWaldherr/HowTo-Deploy-LaTeX-Documents/stargazers)   
@@ -29,3 +30,4 @@ and what is the solution?
 [![Creative Commons Lizenzvertrag](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-sa/4.0/) 
 
 Download the PDF from the [latest Release](https://github.com/SimonWaldherr/HowTo-Deploy-LaTeX-Documents/releases/latest).
+

@@ -1,0 +1,3 @@
+# Howto Deploy LaTeX Documents
+compiler: xelatex
+root_file: HowtoDeployLatexDocs-EN.tex

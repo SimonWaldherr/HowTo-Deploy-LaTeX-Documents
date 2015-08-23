@@ -19,9 +19,9 @@ script:
 
 # in the next step we use pdflatex to convert .tex to .pdf
 # of course we could use pandoc for this also, but pdflatex generates nicer PDFs
-  - pdflatex -interaction=nonstopmode HowtoDeployLatexDocs-DE.tex
-  - pdflatex -interaction=nonstopmode HowtoDeployLatexDocs-EN.tex
-  - pdflatex -interaction=nonstopmode README.tex
+  - xelatex -interaction=nonstopmode HowtoDeployLatexDocs-DE.tex
+  - xelatex -interaction=nonstopmode HowtoDeployLatexDocs-EN.tex
+  - xelatex -interaction=nonstopmode README.tex
 
 # now we convert the pdf file to a much smaller djvu document  
   - pdf2djvu -d 1200 -o HowtoDeployLatexDocs-DE.djvu HowtoDeployLatexDocs-DE.pdf
