@@ -1,6 +1,10 @@
 # Howto Deploy LaTeX Documents
 ## HowTo Deploy LaTeX (or Markdown) Documents as PDF (and DjVu) via [GitHub](https://github.com/github) and [TravisCI](https://github.com/travis-ci)
 
+**maybe you should take a look at: <https://github.com/SimonWaldherr/BookTemplate>**  
+
+---
+
 [![Build Status](https://travis-ci.org/SimonWaldherr/HowTo-Deploy-LaTeX-Documents.svg?branch=master)](https://travis-ci.org/SimonWaldherr/HowTo-Deploy-LaTeX-Documents) 
 [![PDF Status](https://www.sharelatex.com/github/repos/SimonWaldherr/HowTo-Deploy-LaTeX-Documents/builds/latest/badge.svg)](https://www.sharelatex.com/github/repos/SimonWaldherr/HowTo-Deploy-LaTeX-Documents/builds/latest/output.pdf) 
 [![GitHub Release](https://img.shields.io/badge/download-latest-brightgreen.svg)](https://github.com/SimonWaldherr/HowTo-Deploy-LaTeX-Documents/releases/latest) 
